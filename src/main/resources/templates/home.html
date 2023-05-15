@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Welcome to Home Page</h1>
+<br>
+<form method="post" th:action="@{/users}" th:object="${user1}">
+    <label for="firstName">First Name:</label>
+    <input type="text" th:field="*{firstName}"/>
+    <br>
+    <label for="secondName">Second Name:</label>
+    <input type="text" th:field="*{secondName}"/>
+    <br>
+    <label for="lustName">Lust Name:</label>
+    <input type="text" th:field="*{lustName}"/>
+    <br>
+    <input type="submit" value="Submit order"/>
+
+</form>
+</body>
+</html>
