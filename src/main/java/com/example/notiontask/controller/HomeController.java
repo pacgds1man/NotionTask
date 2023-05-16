@@ -1,12 +1,8 @@
 package com.example.notiontask.controller;
 
-import com.example.notiontask.Entyty.User;
-import lombok.extern.slf4j.Slf4j;
+import com.example.notiontask.entyty.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/")

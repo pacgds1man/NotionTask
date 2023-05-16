@@ -1,7 +1,7 @@
 package com.example.notiontask.controller;
 
-import com.example.notiontask.Entyty.User;
-import com.example.notiontask.data.UserRepository;
+import com.example.notiontask.entyty.User;
+import com.example.notiontask.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
