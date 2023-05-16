@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/")
 public class HomeController {
@@ -15,8 +16,9 @@ public class HomeController {
     public String homePage() {
         return "home";
     }
-    @ModelAttribute(name = "user1")
-    public User user(){
+
+    @ModelAttribute(name = "user")
+    public User user() {
         return new User();
     }
 }

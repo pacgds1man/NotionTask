@@ -8,18 +8,18 @@
 <body>
 <h1>Welcome to Home Page</h1>
 <br>
-<form method="post" th:action="@{/users}" th:object="${user1}">
+<form method="post" th:action="@{/users}" th:object="${user}">
     <label for="firstName">First Name:</label>
-    <input type="text" th:field="*{firstName}"/>
+    <input type="text" th:field="*{firstname}"/>
     <br>
     <label for="secondName">Second Name:</label>
-    <input type="text" th:field="*{secondName}"/>
+    <input type="text" th:field="*{secondname}"/>
     <br>
-    <label for="lustName">Lust Name:</label>
-    <input type="text" th:field="*{lustName}"/>
+    <label for="lustname">Lust Name:</label>
+    <input type="text" th:field="*{lustname}"/>
     <br>
-    <input type="submit" value="Submit order"/>
-
+    <input type="submit" value="Create new User"/>
+</form>
 </form>
 </body>
 </html>
