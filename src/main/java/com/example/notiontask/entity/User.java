@@ -1,4 +1,4 @@
-package com.example.notiontask.entyty;
+package com.example.notiontask.entity;
 
 import lombok.Data;
 

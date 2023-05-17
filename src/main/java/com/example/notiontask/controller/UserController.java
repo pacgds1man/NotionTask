@@ -1,6 +1,6 @@
 package com.example.notiontask.controller;
 
-import com.example.notiontask.entyty.User;
+import com.example.notiontask.entity.User;
 import com.example.notiontask.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +31,7 @@ public class UserController {
     @PostMapping()
     public String newUser(@Valid User user) {
         userRepo.save(user);
-        return "home";
+        return "redirect:/users/"+user.getId();
     }
 
 }

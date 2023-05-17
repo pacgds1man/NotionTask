@@ -1,7 +1,8 @@
 package com.example.notiontask.controller;
 
-import com.example.notiontask.entyty.User;
+import com.example.notiontask.entity.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -9,12 +10,8 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
 
     @GetMapping()
-    public String homePage() {
+    public String homePage(Model model) {
+        model.addAttribute(new User());
         return "home";
-    }
-
-    @ModelAttribute(name = "user")
-    public User user() {
-        return new User();
     }
 }
