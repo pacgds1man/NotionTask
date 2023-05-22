@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/users")
 public class UserController {
     private final UserRepository userRepo;
 
@@ -26,12 +26,12 @@ public class UserController {
         return userRepo.findById(id).get();
     }
 
-    @GetMapping("/all")
+    @GetMapping("/")
     public List<User> findAllUser() {
         return userRepo.findAll();
     }
 
-    @PutMapping
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public User newUser(@RequestBody User user) {
         return userRepo.save(user);
