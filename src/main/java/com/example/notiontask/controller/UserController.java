@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.jws.soap.SOAPBinding;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class UserController {
         return userRepo.findById(id).get();
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public List<User> findAllUser() {
         return userRepo.findAll();
     }
@@ -37,8 +38,16 @@ public class UserController {
         return userRepo.save(user);
     }
 
+    @PutMapping("/{id}")
+    public User chengeUser(@PathVariable Long id, @RequestBody User cheng){
+        if (cheng.getId() == null) {
+            cheng.setId(id);
+        }
+        return userRepo.save(cheng);
+    }
+
     @PatchMapping("/{id}")
-    public User chengUser(@PathVariable Long id, @RequestBody User patch) {
+    public User patchUser(@PathVariable Long id, @RequestBody User patch) {
         User user = userRepo.findById(id).get();
 
         if (patch.getFirstname() != null) {
@@ -55,7 +64,8 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletedUser(@PathVariable Long id){
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteUser(@PathVariable Long id){
         userRepo.deleteById(id);
     }
 
